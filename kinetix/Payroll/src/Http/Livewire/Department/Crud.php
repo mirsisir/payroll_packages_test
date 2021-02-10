@@ -2,8 +2,10 @@
 
 namespace kinetix\payroll\Http\Livewire\Department;
 
-use Livewire\Component;
 use kinetix\payroll\Models\Department;
+
+use Livewire\Component;
+
 
 class Crud extends Component
 {
@@ -91,9 +93,10 @@ class Crud extends Component
 
     public function render()
     {
+        $client_id = auth()->user()->client_id ?? 1;
 
-        $departments = Department::all();
+        $departments = Department::where('client_id', $client_id)->get();
 
-        return view('Payroll::livewire.department.crud', compact('departments'))->layout('layouts.admin.base');
+        return view('Payroll::livewire.department.crud', compact('departments'))->layout('Payroll::layouts.app-hrm');
     }
 }

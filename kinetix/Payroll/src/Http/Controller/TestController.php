@@ -1,8 +1,8 @@
 <?php
 
-namespace livw\Test\Http\Controller;
+namespace kinetix\payroll\Http\Controller;
 
-use App\Http\Controllers\Controller;
+use kinetix\payroll\Http\Controller\Controller;
 use Illuminate\Http\Request;
 
 

@@ -12,9 +12,9 @@
     <div class="d-flex">
 
         @if($updateDept)
-            @include('Payroll::livewire.department.edit')
+            @include('livewire.department.edit')
         @else
-            @include('Payroll::livewire.department.create')
+            @include('livewire.department.create')
         @endif
 
 

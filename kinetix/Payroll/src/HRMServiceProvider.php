@@ -3,7 +3,7 @@
 namespace kinetix\payroll;
 
 
-//use Enam\Acc\Http\Livewire\AccHeadComponent;
+
 
 use Illuminate\Support\ServiceProvider;
 use kinetix\payroll\Http\Livewire\Department\Crud;
@@ -29,6 +29,7 @@ class HRMServiceProvider extends ServiceProvider
 
 
         Livewire::component('sisir::live-test-component', LiveTestComponent::class);
+
         Livewire::component('Payroll::crud', Crud::class);
 
 
