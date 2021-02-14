@@ -21,9 +21,9 @@ class Crud extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $holidays = Holiday::where('client_id', $client_id)->get();
 
-        return view('livewire.holiday.crud', compact('holidays'));
+        return view('Payroll::livewire.holiday.crud', compact('holidays'))->layout('Payroll::layouts.app-hrm');
     }
 }

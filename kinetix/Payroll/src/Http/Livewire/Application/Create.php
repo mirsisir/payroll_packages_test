@@ -36,10 +36,10 @@ class Create extends Component
     {
         $this->dispatchBrowserEvent('livewire:load');
 
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $employees = Employee::where('client_id', $client_id)->get();
         $categories = LeaveCategory::where('client_id', $client_id)->get();
 
-        return view('livewire.application.create', compact('employees', 'categories'));
+        return view('Payroll::livewire.application.create', compact('employees', 'categories'))->layout('Payroll::layouts.app-hrm');
     }
 }

@@ -18,11 +18,11 @@ class AttendanceReportDetails extends Component
         view::share( 'title', 'Attendance Report Details');
         $this->month = Carbon::now()->format('Y-m');
 
-        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id);
+        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id ??null);
 
-        $this->attendance= Attendance::where('client_id',auth()->user()->client_id)->get();
+        $this->attendance= Attendance::where('client_id',auth()->user()->client_id ?? null ??null)->get();
 
-        $workingday = WorkingDay::where('client_id',auth()->user()->client_id)->first();
+        $workingday = WorkingDay::where('client_id',auth()->user()->client_id ?? null )->first();
         if(!empty($workingday)){
             if ($workingday->sat == 0) {
                 array_push($this->working_days, 'Sat');
@@ -61,6 +61,6 @@ class AttendanceReportDetails extends Component
 
     public function render()
     {
-        return view('livewire.attendance-report-details')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.attendance-report-details')->layout('Payroll::layouts.app-hrm');
     }
 }

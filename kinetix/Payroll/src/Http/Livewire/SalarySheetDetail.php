@@ -17,12 +17,12 @@ class SalarySheetDetail extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $salary_sheets = SalarySheet::where('client_id', $client_id)
                             ->where('date', $this->selectMonth)->get();
 
-        return view('livewire.salary-sheet-detail', compact('salary_sheets'))
-                    ->extends('layouts.app-hrm');
+        return view('Payroll::livewire.salary-sheet-detail', compact('salary_sheets'))
+                    ->extends('Payroll::layouts.app-hrm');
     }
 
 }

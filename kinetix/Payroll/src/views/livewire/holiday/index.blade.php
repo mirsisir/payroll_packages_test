@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('title', 'Holidays')
 
@@ -12,5 +12,5 @@
     </div>
 </div>
 
-    
+
 @endsection

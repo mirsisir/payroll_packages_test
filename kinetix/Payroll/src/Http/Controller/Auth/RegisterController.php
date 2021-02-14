@@ -3,7 +3,7 @@
 namespace kinetix\payroll\Http\Controller\Auth;
 
 use kinetix\payroll\Http\Controller\Controller;
-use App\Providers\RouteServiceProvider;
+use kinetix\payroll\RouteServiceProvider;
 use kinetix\payroll\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;

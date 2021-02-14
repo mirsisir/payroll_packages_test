@@ -18,7 +18,7 @@ class Index extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $loans = Loan::where('client_id', $client_id)
                 ->whereHas('employee', function ($query) {
                     $query->where('emp_id', 'like', '%' . $this->search . '%')
@@ -26,6 +26,6 @@ class Index extends Component
                           ->orWhere('lname', 'like', '%' . $this->search . '%');
                 })->get();
 
-        return view('livewire.loan.index', compact('loans'))->extends('layouts.app-hrm');
+        return view('Payroll::livewire.loan.index', compact('loans'))->extends('Payroll::layouts.app-hrm');
     }
 }

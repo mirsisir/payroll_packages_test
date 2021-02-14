@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('title', 'Add Leave Application')
 
@@ -6,7 +6,7 @@
 
 <div class="row text-dark">
     <div class="col-md-12">
-        
+
         @livewire('application.create')
 
     </div>

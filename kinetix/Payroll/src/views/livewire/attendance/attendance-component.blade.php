@@ -41,7 +41,7 @@
                                        @php
 
                                        $holidays = [];
-                                       $totalHolidays = \kinetix\payroll\Models\Holiday::all()->where('client_id',auth()->user()->client_id);
+                                       $totalHolidays = \kinetix\payroll\Models\Holiday::all()->where('client_id',auth()->user()->client_id ?? null);
                                     $startOfMonth = Carbon\Carbon::createFromDate($month)->startOfMonth();
                                     $endOfMonth = Carbon\Carbon::createFromDate($month)->endOfMonth();
 
@@ -108,7 +108,7 @@
                                             @php
 
                                                 $holidays = [];
-                                                $totalHolidays = \kinetix\payroll\Models\Holiday::all()->where('client_id',auth()->user()->client_id);
+                                                $totalHolidays = \kinetix\payroll\Models\Holiday::all()->where('client_id',auth()->user()->client_id ?? null);
                                                 $startOfMonth = Carbon\Carbon::createFromDate($month)->startOfMonth();
                                                 $endOfMonth = Carbon\Carbon::createFromDate($month)->endOfMonth();
 
@@ -133,7 +133,7 @@
 
                                                     @php
                                                     $leaves = [];
-                                                    $total_leave = \kinetix\payroll\Models\Application::all()->where('client_id',auth()->user()->client_id)
+                                                    $total_leave = \kinetix\payroll\Models\Application::all()->where('client_id',auth()->user()->client_id ?? null)
                                                                                                      ->where('employee_id',$employee->id);
                                                     $startOfMonth = Carbon\Carbon::createFromDate($month)->startOfMonth();
                                                     $endOfMonth = Carbon\Carbon::createFromDate($month)->endOfMonth();

@@ -8,7 +8,7 @@
 <div class="row text-dark">
     <div class="col-md-12">
 
-        @livewire('employee.create')
+        @livewire('Payroll::employee.create')
 
     </div>
 </div>

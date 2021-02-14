@@ -16,9 +16,9 @@ class AttendanceReport extends Component
     public $employee_a_record;
     public function mount(){
         View::share('title', 'Attendance Report ');
-        $this->all_department = Department::all()->where('client_id',auth()->user()->client_id);
-        $this->all_designation = Designation::all()->where('client_id',auth()->user()->client_id);
-        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id);
+        $this->all_department = Department::all()->where('client_id',auth()->user()->client_id ??null);
+        $this->all_designation = Designation::all()->where('client_id',auth()->user()->client_id ??null);
+        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id ??null);
     }
 
     public function updatedDepartment(){
@@ -41,6 +41,6 @@ class AttendanceReport extends Component
 
     public function render()
     {
-        return view('livewire.attendance-report')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.attendance-report')->layout('Payroll::layouts.app-hrm');
     }
 }

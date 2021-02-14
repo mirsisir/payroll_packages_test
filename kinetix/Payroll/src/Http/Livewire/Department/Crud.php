@@ -37,9 +37,13 @@ class Crud extends Component
             'designations.*' => 'required|min:3',
         ]);
 
-        $dept = auth()->user()->departments()->create([
-            'department' => $data['department']
-        ]);
+        $dept = new Department;
+
+        $dept->department = $data['department'];
+        $dept->user_id = auth()->user()->id;
+        $dept->save();
+
+
 
         foreach($this->designations as $designation)
         {
@@ -93,7 +97,7 @@ class Crud extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id ?? 1;
+        $client_id = auth()->user()->client_id ?? null ?? null;
 
         $departments = Department::where('client_id', $client_id)->get();
 

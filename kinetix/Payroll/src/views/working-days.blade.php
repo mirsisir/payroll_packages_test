@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('title', 'Working Days')
 
@@ -17,7 +17,7 @@
 @endif
 <div class="row">
     <div class="col-md-12">
-        
+
         <div class="card">
             <div class="card-body">
                 <h2 class="text-dark font-weight-bold mb-4"> Set Working Days </h2>
@@ -65,5 +65,5 @@
     </div>
 </div>
 
-    
+
 @endsection

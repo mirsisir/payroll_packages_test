@@ -71,7 +71,7 @@
                         $holiday_days = [];
                         $total_offday = 0;
 
-                        $workingday = kinetix\payroll\Models\WorkingDay::firstWhere('client_id',auth()->user()->client_id);
+                        $workingday = kinetix\payroll\Models\WorkingDay::firstWhere('client_id',auth()->user()->client_id ?? null);
                         if ($workingday->sat == 0) {
                             array_push($holiday_days, 'Saturday');
                         }

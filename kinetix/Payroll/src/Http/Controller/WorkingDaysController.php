@@ -9,14 +9,14 @@ class WorkingDaysController extends Controller
 {
     public function index()
     {
-        $working_days = auth()->user()->workingdays()->first();
+        $working_days = WorkingDay::take(1)->first();
 
         if(! $working_days)
         {
             $working_days = new WorkingDay();
         }
 
-        return view('working-days', compact('working_days'));
+        return view('Payroll::working-days', compact('working_days'));
     }
 
     public function store(Request $request)
@@ -30,8 +30,9 @@ class WorkingDaysController extends Controller
         $fri = $request->fri == 'on' ? 1 : 0;
 
         WorkingDay::updateOrCreate(
-        ['client_id' => auth()->user()->client_id],
+        ['client_id' => auth()->user()->client_id ??null],
         [
+            'user_id' => auth()->user()->id,
             'sat' => $sat,
             'sun' => $sun,
             'mon' => $mon,
@@ -41,7 +42,7 @@ class WorkingDaysController extends Controller
             'fri' => $fri
         ]);
 
-        return redirect('/set-working-days')->with('success', 'Working Days Has Been Updated!');
+        return redirect('set-working-days')->with('success', 'Working Days Has Been Updated!');
     }
 
 }

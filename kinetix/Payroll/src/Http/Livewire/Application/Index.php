@@ -31,7 +31,7 @@ class Index extends Component
     public function render()
     {
         $this->dispatchBrowserEvent('livewire:load');
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
 
         if($this->start && $this->end)
         {
@@ -49,6 +49,6 @@ class Index extends Component
             $applications = Application::where('client_id', $client_id)->get();
         }
 
-        return view('livewire.application.index', compact('applications'));
+        return view('Payroll::livewire.application.index', compact('applications'))->layout('Payroll::layouts.app-hrm');
     }
 }

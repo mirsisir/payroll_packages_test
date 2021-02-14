@@ -149,7 +149,8 @@
                 // $("div.printableArea").printArea( options );
                 var prtContent = document.getElementById("printSection");
                 var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-                var htm = '' +
+                var htm =
+                    '' +
                     '<link media="all" type="text/css" rel="stylesheet" href="{{ asset('css/materialicons.css') }}">' +
                     '<link media="all" type="text/css" rel="stylesheet" href="https://www.bootstrapdash.com/demo/connect-plus/laravel/template/demo_1/css/app.css">';
 
@@ -163,9 +164,9 @@
 
         $(document).ready(function () {
             // alert('lsdf')
-            $('.btn-success').append('<i class="mdi mdi-check"></i>');
-            $('.btn-danger').append('<i class="mdi mdi-crosshairs"></i>');
-            $('.btn-secondary').append('<i class="mdi mdi-home"></i>');
+            $('.btn-success').append('<i class="far fa-check-circle"></i>');
+            $('.btn-danger').append('<i class="fas fa-house-user"></i>');
+            $('.btn-secondary').append('<i class="fas fa-house-user"></i>');
         })
     </script>
 @endsection

@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         kinetix\payroll\HRMServiceProvider::class,
-
+        kinetix\payroll\ClientIdProvider::class
     ],
 
     /*

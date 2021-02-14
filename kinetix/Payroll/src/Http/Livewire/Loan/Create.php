@@ -57,10 +57,10 @@ class Create extends Component
             $this->installment = round($this->amount / $this->install_period)+1;
         }
 
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $employees = Employee::where('client_id', $client_id)->get();
 
-        return view('livewire.loan.create', compact('employees'))
-                    ->extends('layouts.app-hrm');
+        return view('Payroll::livewire.loan.create', compact('employees'))
+                    ->extends('Payroll::layouts.app-hrm');
     }
 }

@@ -1,29 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6c677e34-065b-4e9c-9104-65a7411847e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/connect-plus-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/connect-plus-starter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/ClientIdProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/ClientIdProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/HRMServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/HRMServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/ConfirmPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/Auth/VerificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/HolidayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/HolidayController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/LoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/LoanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/WorkingDaysController.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Controller/WorkingDaysController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Application/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Application/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Application/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Application/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Attendance/AttendanceComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Attendance/AttendanceComponent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/AttendanceReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/AttendanceReport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/AttendanceReportDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/AttendanceReportDetails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Department/Crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Department/Crud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Models/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Models/Designation.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Models/Designation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Employee/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Holiday/Crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Holiday/Crud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/LeaveCategory/Crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/LeaveCategory/Crud.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Loan/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Loan/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Loan/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Loan/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/PrimaryAttendanceReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/PrimaryAttendanceReport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Salary/MakePaymentsComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Salary/MakePaymentsComponent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Salary/SalaryComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/Salary/SalaryComponent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/SalarySheetDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/Http/Livewire/SalarySheetDetail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_24_062331_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_24_062331_create_departments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_25_053717_create_working_days_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_25_053717_create_working_days_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_25_094608_create_holidays_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_25_094608_create_holidays_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_26_074337_create_leave_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_26_074337_create_leave_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_26_091236_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_26_091236_create_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_30_060713_create_applications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_11_30_060713_create_applications_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_12_07_171257_create_loans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_12_07_171257_create_loans_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_12_10_080538_create_salary_sheets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/database/migrations/2020_12_10_080538_create_salary_sheets_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/applications/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/applications/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/applications/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/applications/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/employees/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/holidays/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/layouts/app-hrm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/layouts/app-hrm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance-report-details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance-report-details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance-report.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance-report.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance/attendance-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/attendance/attendance-component.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/department/crud.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/department/crud.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/department/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/employee/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/employee/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/holiday/crud.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/holiday/crud.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/holiday/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/holiday/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/leave-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/leave-category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/loan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/livewire/loan/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/payslip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/payslip.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/payslip_generate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/payslip_generate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kinetix/Payroll/src/views/working-days.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/kinetix/Payroll/src/views/working-days.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +265,16 @@
       <workItem from="1612848378874" duration="14000" />
       <workItem from="1612897529523" duration="4440000" />
       <workItem from="1612933780016" duration="64000" />
-      <workItem from="1612982352885" duration="1351000" />
+      <workItem from="1612982352885" duration="2810000" />
+      <workItem from="1612986787818" duration="1161000" />
+      <workItem from="1612987999313" duration="397000" />
+      <workItem from="1613027594730" duration="622000" />
+      <workItem from="1613153929273" duration="1094000" />
+      <workItem from="1613156191160" duration="1150000" />
+      <workItem from="1613158448374" duration="2032000" />
+      <workItem from="1613239484206" duration="1668000" />
+      <workItem from="1613241288850" duration="6767000" />
+      <workItem from="1613286317668" duration="5823000" />
     </task>
     <servers />
   </component>

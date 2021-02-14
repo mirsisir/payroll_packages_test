@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('content')
     @if ($errors->any())

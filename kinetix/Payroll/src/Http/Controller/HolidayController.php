@@ -2,11 +2,23 @@
 
 namespace kinetix\payroll\Http\Controller;
 
+use Illuminate\Support\Facades\DB;
 use kinetix\payroll\Models\Holiday;
 use Illuminate\Http\Request;
 
 class HolidayController extends Controller
 {
+
+
+    public function create(){
+
+        return view('Payroll::holidays/create');
+    }
+
+    public function index(){
+
+        return view('Payroll::holidays/index');
+    }
 
 
     public function store(Request $request)
@@ -18,14 +30,15 @@ class HolidayController extends Controller
             'end' => 'required',
         ]);
 
-        auth()->user()->holidays()->create($data);
+        DB::table('holidays')->insert($data);
+
 
         return redirect('/holidays')->with('success', 'Holidays successfully Inserted.');
     }
 
     public function edit(Request $request, Holiday $holiday)
     {
-        return view('/holidays/edit', compact('holiday'));
+        return view('Payroll::holidays/edit', compact('holiday'));
     }
 
 

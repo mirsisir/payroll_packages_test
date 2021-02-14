@@ -1,10 +1,15 @@
 <div>
-    @if (session('success'))
+
+    <div class="d-sm-flex justify-content-xl-between align-items-center mb-2">
+        <a href="/holidays/create" class="btn btn-success">Add Holiday</a>
+    </div>
+
+@if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    
+
     @if (session('danger'))
         <div class="alert alert-danger">
             {{ session('danger') }}
@@ -13,7 +18,7 @@
     <div class=" grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                
+
                 <table id="table" class="table" width="100%">
                     <thead class="bg-primary text-white">
                         <tr>
@@ -45,12 +50,12 @@
                         @empty
                             <tr class="text-center">
                                 <td colspan="5"><span class="badge badge-info">No Employee To Show</span></td>
-                            </tr> 
+                            </tr>
                         @endforelse
 
                     </tbody>
                 </table>
-                
+
             </div>
         </div>
     </div>
@@ -59,8 +64,8 @@
 <script>
     $(document).ready(function() {
         var headingExcel =  '{{ auth()->user()->name }}';
-        var headingPrint =  '<h1 id="heading" class="text-center text-dark">{{ auth()->user()->name }}</h1>' + 
-                            '<h2 class="text-center text-dark">Address, Address, Address</h2>' + 
+        var headingPrint =  '<h1 id="heading" class="text-center text-dark">{{ auth()->user()->name }}</h1>' +
+                            '<h2 class="text-center text-dark">Address, Address, Address</h2>' +
                             '<h4 class="text-center text-dark pt-2">Holiday List</h4>';
         var headingPDF = '{{ auth()->user()->name }}' + '\n' + '{{ auth()->user()->email }}';
 
@@ -98,7 +103,7 @@
                         columns: [ 0, 1, 2, 3 ]
                     },
                     customize: function (doc) {
-                        doc.content[1].table.widths = 
+                        doc.content[1].table.widths =
                             Array(doc.content[1].table.body[0].length + 1).join('*').split('');
                     }
                 },
@@ -109,7 +114,7 @@
                     },
                     title: headingPrint,
                 }
-                
+
             ]
         } );
     } );

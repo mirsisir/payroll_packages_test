@@ -27,8 +27,8 @@ class PrimaryAttendanceReport extends Component
     {
         $this->month = Carbon::now()->format('Y-m');
         View::share('title', 'Attendance Report Primary');
-        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id);
-        $this->all_designation = Designation::all()->where('client_id', auth()->user()->client_id);
+        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id ?? null ?? null);
+        $this->all_designation = Designation::all()->where('client_id', auth()->user()->client_id ?? null ?? null);
     }
     function dayCount($day, $month, $year){
         $totalDay = cal_days_in_month(CAL_GREGORIAN, $month, $year);
@@ -45,7 +45,7 @@ class PrimaryAttendanceReport extends Component
     public function updated()
     {
         $this->all_employee = Employee::all()->where('department_id', $this->department)
-            ->where('client_id', auth()->user()->client_id);
+            ->where('client_id', auth()->user()->client_id ?? null ?? null);
 
         $month = explode("-", $this->month)[1];
         $year = explode("-", $this->month)[0];
@@ -56,7 +56,7 @@ class PrimaryAttendanceReport extends Component
         //        working day count ----------------------------------
         $holiday_days = [];
         $workingday = 0;
-        $workingday = WorkingDay::firstWhere('client_id', auth()->user()->client_id);
+        $workingday = WorkingDay::firstWhere('client_id', auth()->user()->client_id ?? null ?? null);
         if ($workingday->sat == 0) {
             array_push($holiday_days, 'Saturday');
         }
@@ -121,6 +121,6 @@ class PrimaryAttendanceReport extends Component
 
     public function render()
     {
-        return view('livewire.primary-attendance-report')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.primary-attendance-report')->layout('Payroll::layouts.app-hrm');
     }
 }

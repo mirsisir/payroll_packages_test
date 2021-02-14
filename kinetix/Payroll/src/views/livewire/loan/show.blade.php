@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('content')
 
@@ -27,7 +27,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div>
                 <table class="table table-bordered table-hover" style="color: black">
                     <thead>
@@ -74,5 +74,5 @@
         location.reload();
     }
 </script>
-    
+
 @endsection

@@ -24,7 +24,7 @@ public $edit= false;
     public function edit($e_id){
         $this->edit=true;
         $this->e_id= $e_id;
-            $info = SalaryInfo::where('employee_id',$e_id)->firstWhere('client_id',auth()->user()->client_id);
+            $info = SalaryInfo::where('employee_id',$e_id)->firstWhere('client_id',auth()->user()->client_id ?? null);
             if (!empty($info)){
                 $this->employee_name = Employee::find($e_id);
                 $this->basic_salary = $info->basic_salary;
@@ -99,7 +99,7 @@ public $edit= false;
 
     public function create_salary_sheet()
     {
-        $salary_infos = SalaryInfo::where('client_id',auth()->user()->client_id)->get();
+        $salary_infos = SalaryInfo::where('client_id',auth()->user()->client_id ?? null)->get();
         foreach($salary_infos as $salary_info)
         {
             auth()->user()->salary_sheets()->updateOrCreate(
@@ -122,7 +122,7 @@ public $edit= false;
             'total_deduction' =>$salary_info->total_deduction,
             'net_salary' => $salary_info->net_salary,
             'Due' => $salary_info->net_salary,
-            'client_id' => auth()->user()->client_id,
+            'client_id' => auth()->user()->client_id ?? null,
             ]);
         }
 
@@ -133,11 +133,11 @@ public $edit= false;
     public function mount(){
         View::share('title','Employee Salary Info');
 
-        $this->all_employee =Employee::all()->where('client_id',auth()->user()->client_id);
+        $this->all_employee =Employee::all()->where('client_id',auth()->user()->client_id ?? null);
     }
 
     public function render()
     {
-        return view('livewire.salary.salary-component')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.salary.salary-component')->layout('Payroll::layouts.app-hrm');
     }
 }

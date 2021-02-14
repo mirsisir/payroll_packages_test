@@ -15,7 +15,7 @@ class CreateLeaveCategoriesTable extends Migration
     {
         Schema::create('leave_categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('client_id')->nullable();
             $table->string('category_name');
 

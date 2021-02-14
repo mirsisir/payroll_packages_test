@@ -31,7 +31,7 @@ class MakePaymentsComponent extends Component
         $this->employee = Employee::find($id);
         $this->iid = $id;
 
-        $loan = Loan::where('employee_id' ,$id)->firstWhere('client_id',auth()->user()->client_id);
+        $loan = Loan::where('employee_id' ,$id)->firstWhere('client_id',auth()->user()->client_id ?? null);
 
 
         $salary_s  = SalarySheet::where('date',$this->select_month)
@@ -255,6 +255,6 @@ class MakePaymentsComponent extends Component
 
         $this->total_absent = $this->total_working_day - $this->total_attendance ;
 
-        return view('livewire.salary.make-payments-component')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.salary.make-payments-component')->layout('Payroll::layouts.app-hrm');
     }
 }

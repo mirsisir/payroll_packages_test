@@ -81,7 +81,7 @@ class AttendanceComponent extends Component
 
     public function mount()
     {
-        $this->client_id= auth()->user()->client_id;
+        $this->client_id= auth()->user()->client_id ?? null;
         $this->month = Carbon::now()->format('Y-m');
         View::share('title', 'Attendance ');
 
@@ -117,6 +117,6 @@ class AttendanceComponent extends Component
 
     public function render()
     {
-        return view('livewire.attendance.attendance-component')->layout('layouts.app-hrm');
+        return view('Payroll::livewire.attendance.attendance-component')->layout('Payroll::layouts.app-hrm');
     }
 }

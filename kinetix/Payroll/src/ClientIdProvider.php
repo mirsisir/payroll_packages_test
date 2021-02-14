@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace kinetix\payroll;
 
+use Illuminate\Support\ServiceProvider;
 use kinetix\payroll\Models\Application;
 use kinetix\payroll\Models\Attendance;
 use kinetix\payroll\Models\Department;
@@ -13,7 +14,6 @@ use kinetix\payroll\Models\Loan;
 use kinetix\payroll\Models\SalaryInfo;
 use kinetix\payroll\Models\SalarySheet;
 use kinetix\payroll\Models\WorkingDay;
-use Illuminate\Support\ServiceProvider;
 
 class ClientIdProvider extends ServiceProvider
 {
@@ -34,19 +34,20 @@ class ClientIdProvider extends ServiceProvider
      */
     public function boot()
     {
-        Attendance::creating(function ($model){
+
+        \kinetix\payroll\Models\Attendance::creating(function ($model){
             $model->user_id = auth()->user()->id;
             $model->client_id = auth()->user()->client_id;
         });
 
 
         Department::creating(function($model){
-           $model->client_id = auth()->user()->client_id;
-           $model->user_id = auth()->user()->id;
+            $model->client_id = auth()->user()->client_id;
+            $model->user_id = auth()->user()->id;
         });
         Designation::creating(function($model){
-           $model->client_id = auth()->user()->client_id;
-           $model->user_id = auth()->user()->id;
+            $model->client_id = auth()->user()->client_id;
+            $model->user_id = auth()->user()->id;
         });
 
         WorkingDay::creating(function ($model){
@@ -88,7 +89,6 @@ class ClientIdProvider extends ServiceProvider
             $model->user_id = auth()->user()->id;
             $model->client_id = auth()->user()->client_id;
         });
-
 
     }
 }

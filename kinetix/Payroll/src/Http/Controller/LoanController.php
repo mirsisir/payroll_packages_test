@@ -9,13 +9,13 @@ class LoanController extends Controller
 {
     public function show(Loan $loan)
     {
-        return view('livewire.loan.show', compact('loan'));
+        return view('Payroll::livewire.loan.show', compact('loan'));
     }
 
     public function destroy(Loan $loan)
     {
         $loan->delete();
 
-        return redirect('/loans')->with('danger', 'Loan Deleted Successfully');
+        return redirect('Payroll::loans')->with('danger', 'Loan Deleted Successfully');
     }
 }

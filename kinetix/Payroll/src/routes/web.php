@@ -1,7 +1,10 @@
 <?php
 
 
+use Illuminate\Support\Facades\Route;
+use kinetix\payroll\Http\Controller\HomeController;
 use kinetix\payroll\Http\Livewire\Attendance\AttendanceComponent;
+use kinetix\payroll\Http\Livewire\Department\Crud;
 use kinetix\payroll\Http\Livewire\Salary\MakePaymentsComponent;
 use kinetix\payroll\Http\Livewire\Salary\SalaryComponent;
 
@@ -53,12 +56,13 @@ Route::middleware(['web'])
 
         Route::middleware(['auth'])->group(function () {
 
-            Route::get('/department', function () {
-                return view('livewire.department.index');
-            });
+//            Route::get('/department', function () {
+//                return view('Payroll::livewire.department.index');
+//            });
+       Route::get('/department', Crud::class)->name('department_create');
 
             Route::get('/set-working-days-livewire', function () {
-                return view('livewire.working-day.index');
+                return view('Payroll::livewire.working-day.index');
             });
 
             Route::view('/', 'Payroll::dashboard');
@@ -67,24 +71,39 @@ Route::middleware(['web'])
             Route::get('/set-working-days', [WorkingDaysController::class, 'index']);
             Route::post('/set-working-days', [WorkingDaysController::class, 'store']);
 
-            Route::view('holidays', 'holidays/index');
-            Route::view('holidays/create', 'holidays/create');
+//            Route::view('holidays', 'Payroll::holidays/index');
+//            Route::view('holidays/create', 'Payroll::holidays/create');
+//
+//
+            Route::get('holidays', \kinetix\payroll\Http\Livewire\Holiday\Crud::class);
+
+            Route::get('holidays/create',  [HolidayController::class, 'create']);
+
             Route::post('/holidays', [HolidayController::class, 'store']);
             Route::get('/holidays/{holiday}/edit', [HolidayController::class, 'edit']);
             Route::patch('/holidays/{holiday}', [HolidayController::class, 'update']);
 
-            Route::view('/leave-categories', 'livewire.leave-category.index');
+            Route::get('/leave-categories', 'Payroll::livewire.leave-category.index');
 
-            Route::view('/employees', 'employees.index');
-            Route::view('/employees/create', 'employees.create');
+            Route::get('/leave-categories', \kinetix\payroll\Http\Livewire\LeaveCategory\Crud::class);
+
+            Route::get('/employees', \kinetix\payroll\Http\Livewire\Employee\Index::class)->name('employee_list');
+
+
+            Route::get('/employees/create',\kinetix\payroll\Http\Livewire\Employee\Create::class)->name('employee_create');
+
+
+
             Route::get('/employees/{employee}/edit', Edit::class);
 
             Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
+
             Route::get('/print_user/{employee}', [EmployeeController::class, 'print_user'])->name('print_user');
 
 
-            Route::view('/applications', 'applications.index');
-            Route::view('/applications/create', 'applications.create');
+            Route::get('applications', \kinetix\payroll\Http\Livewire\Application\Index::class);
+
+            Route::get('applications/create', \kinetix\payroll\Http\Livewire\Application\Create::class);
 
 
             Route::get('/salary_info', SalaryComponent::class)->name('salary_info');

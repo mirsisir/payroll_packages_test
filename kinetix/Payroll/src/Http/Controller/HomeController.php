@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('Payroll::home');
     }
+
+//        public function employee_create()
+//    {
+//        return view('Payroll::employees.create');
+//
+//    }
+
+
 }

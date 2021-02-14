@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('title', 'Edit Employee')
 
@@ -6,9 +6,9 @@
 
 <div class="row text-dark">
     <div class="col-md-12">
-        
+
         @livewire('employee.edit')
-        
+
     </div>
 </div>
 

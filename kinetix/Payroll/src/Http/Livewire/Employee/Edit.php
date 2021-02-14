@@ -219,7 +219,7 @@ class Edit extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $departments = Department::where('client_id', $client_id)->get();
         $designations = [];
 
@@ -229,7 +229,7 @@ class Edit extends Component
             $designations = $dept->designations()->get();
         }
 
-        return view('livewire.employee.edit', compact('departments', 'designations'))
-                ->extends('employees.edit');
+        return view('Payroll::livewire.employee.edit', compact('departments', 'designations'))
+                ->extends('Payroll::employees.edit');
     }
 }

@@ -15,8 +15,8 @@ class CreateSalarySheetsTable extends Migration
     {
         Schema::create('salary_sheets', function (Blueprint $table) {
             $table->id();
-            
-            $table->unsignedBigInteger('user_id');
+
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('client_id')->nullable();
             $table->string('date');
             $table->string('employee_id');

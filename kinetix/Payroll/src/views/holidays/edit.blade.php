@@ -1,4 +1,4 @@
-@extends('layouts.app-hrm')
+@extends('Payroll::layouts.app-hrm')
 
 @section('title', 'Edit Holiday')
 
@@ -7,7 +7,7 @@
 <div class="row text-dark">
     <div class="col-md-12">
 
-        
+
 <div class="grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -64,7 +64,7 @@
     </div>
 </div>
 
-    
+
 @endsection
 
 

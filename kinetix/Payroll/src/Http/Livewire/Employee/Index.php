@@ -21,15 +21,15 @@ class Index extends Component
         $this->resetPage();
     }
     public function mount(){
-        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id);
+        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id ?? null ?? null);
 
-        $this->employees = Employee::where('client_id', auth()->user()->client_id)->get();
+        $this->employees = Employee::where('client_id', auth()->user()->client_id ?? null ?? null)->get();
 
     }
 
      function updated(){
 
-         $this->employees = Employee::all()->where('client_id', auth()->user()->client_id)
+         $this->employees = Employee::all()->where('client_id', auth()->user()->client_id ?? null ?? null)
                                             ->where('department_id',$this->department);
 
      }
@@ -78,7 +78,7 @@ class Index extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
 
 
             // ->where('fname', 'like', '%'.$this->search.'%')
@@ -87,6 +87,6 @@ class Index extends Component
             // ->orWhere('mobile', 'like', '%'.$this->search.'%')
             // ->paginate(20);
 
-        return view('livewire.employee.index');
+        return view('Payroll::livewire.employee.index')->layout('Payroll::layouts.app-hrm');
     }
 }

@@ -2,9 +2,11 @@
 
 namespace kinetix\payroll\Http\Livewire\Employee;
 
-use Livewire\Component;
+
+use Illuminate\Support\Facades\DB;
 use kinetix\payroll\Models\Department;
 use kinetix\payroll\Models\Designation;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Create extends Component
@@ -60,8 +62,8 @@ class Create extends Component
             'status' => '',
             'father' => '',
             'nation' => 'required',
-            'nid' => '',
-            'photo' => '',
+            'nid' => 'required',
+            'photo' => 'required',
 
             'address' => 'required',
             'city' => 'required',
@@ -75,8 +77,8 @@ class Create extends Component
             'acc_number' => '',
 
             'emp_id' => 'unique:employees',
-            'department_id' => '',
-            'designation_id' => '',
+            'department_id' => 'required',
+            'designation_id' => 'required',
             'join_date' => '',
 
             'resume' => '',
@@ -87,6 +89,7 @@ class Create extends Component
             'other' => '',
         ]);
 
+        $user_id = auth()->user()->id;
         if($this->photo){
             $photoPath = $this->photo->store('photos', 'public');
             $photoArray = ['photo' => $photoPath];
@@ -116,7 +119,8 @@ class Create extends Component
             $otherArray = ['other' => $otherPath];
         }
 
-        auth()->user()->employees()->create(array_merge(
+        DB::table('employees')->insert(array_merge(
+
             $data,
             $photoArray ?? [],
             $resumeArray ?? [],
@@ -125,6 +129,7 @@ class Create extends Component
             $contact_paperArray ?? [],
             $id_proffArray ?? [],
             $otherArray ?? [],
+
         ));
         session()->flash('success', 'Employee successfully Inserted.');
         return redirect('/employees');
@@ -132,7 +137,7 @@ class Create extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $departments = Department::where('client_id', $client_id)->get();
         $designations = [];
 
@@ -142,6 +147,6 @@ class Create extends Component
             $designations = $dept->designations()->get();
         }
 
-        return view('livewire.employee.create', compact('departments', 'designations'));
+        return view('Payroll::livewire.employee.create', compact('departments', 'designations'))->layout('Payroll::layouts.app-hrm');
     }
 }

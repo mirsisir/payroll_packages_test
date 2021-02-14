@@ -55,9 +55,9 @@ class Crud extends Component
 
     public function render()
     {
-        $client_id = auth()->user()->client_id;
+        $client_id = auth()->user()->client_id ?? null;
         $leave_categories = LeaveCategory::where('client_id', $client_id)->get();
 
-        return view('livewire.leave-category.crud', compact('leave_categories'));
+        return view('Payroll::livewire.leave-category.crud', compact('leave_categories'));
     }
 }

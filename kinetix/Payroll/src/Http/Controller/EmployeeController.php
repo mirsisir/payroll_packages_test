@@ -12,7 +12,7 @@ class EmployeeController extends Controller
 {
     public function show(Employee $employee)
     {
-        return view('employees.show', compact('employee'));
+        return view('Payroll::employees.show', compact('employee'));
     }
 
 
@@ -28,19 +28,19 @@ class EmployeeController extends Controller
     public function pay( $e_id , $month){
          $payslip= SalarySheet::where('employee_id',$e_id)
                                 ->where('date' ,$month )
-                                    ->where('client_id',auth()->user()->client_id)
+                                    ->where('client_id',auth()->user()->client_id ??null)
                                         ->first();
 
 
-        return view('payslip', compact('payslip'));
+        return view('Payroll::payslip', compact('payslip'));
 
     }
 
     public function payslip(){
 
-        $employee = SalarySheet::where('client_id',auth()->user()->client_id)->get();
+        $employee = SalarySheet::where('client_id',auth()->user()->client_id ??null)->get();
 
-        return view('payslip_generate', compact('employee'));
+        return view('Payroll::payslip_generate', compact('employee'));
     }
     public function payslip_redirect(Request $request){
         $validated = $request->validate([
@@ -57,7 +57,7 @@ class EmployeeController extends Controller
         $emp = Employee::findOrFail($employee);
         $emp_sal= SalaryInfo::firstWhere('employee_id',$employee);
 
-        return view('employees.profile',compact('emp' ,'emp_sal'));
+        return view('Payroll::employees.profile',compact('emp' ,'emp_sal'));
     }
 
 
