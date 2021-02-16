@@ -66,7 +66,7 @@ Route::middleware(['web'])
             });
 
             Route::view('/', 'Payroll::dashboard');
-            Route::view('/dashboard', 'dashboard');
+            Route::view('/dashboard/payroll', 'Payroll::dashboard');
 
             Route::get('/set-working-days', [WorkingDaysController::class, 'index']);
             Route::post('/set-working-days', [WorkingDaysController::class, 'store']);
@@ -83,7 +83,9 @@ Route::middleware(['web'])
             Route::get('/holidays/{holiday}/edit', [HolidayController::class, 'edit']);
             Route::patch('/holidays/{holiday}', [HolidayController::class, 'update']);
 
-            Route::get('/leave-categories', 'Payroll::livewire.leave-category.index');
+//            Route::get('/leave-categories', 'Payroll::livewire.leave-category.index');
+            Route::get('/leave-categories', \kinetix\payroll\Http\Livewire\LeaveCategory\Crud::class);
+
 
             Route::get('/leave-categories', \kinetix\payroll\Http\Livewire\LeaveCategory\Crud::class);
 

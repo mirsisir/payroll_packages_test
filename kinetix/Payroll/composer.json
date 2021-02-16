@@ -2,11 +2,7 @@
     "name": "kinetix/payroll",
     "description": "Payroll Project For Test",
     "type": "library",
-    "require": {
-        "livewire/livewire": "2.3",
-        "illuminate/support": "8.0",
-        "fruitcake/laravel-cors": "2.0"
-    },
+    "require": {},
     "license": "MIT",
     "minimum-stability": "dev",
 
@@ -14,6 +10,14 @@
     "autoload": {
         "psr-4": {
             "kinetix\\payroll\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kinetix\\Payroll\\HRMServiceProvider"
+
+            ]
         }
     }
 }

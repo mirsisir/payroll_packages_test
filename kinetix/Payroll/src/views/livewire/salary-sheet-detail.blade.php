@@ -94,12 +94,13 @@
         // $('#table').css('display','table') ;
 
         var headingExcel =  '{{ auth()->user()->name }}';
-        var headingPrint =  '<h1 id="heading" class="text-center text-dark">{{ auth()->user()->name }}</h1>' + 
-                            '<h2 class="text-center text-dark">Address, Address, Address</h2>' + 
+        var headingPrint =  '<h1 id="heading" class="text-center text-dark">{{ auth()->user()->name }}</h1>' +
+                            '<h2 class="text-center text-dark">Address, Address, Address</h2>' +
                             '<h4 class="text-center text-dark pt-2">Application List</h4>';
         var headingPDF = '{{ auth()->user()->name }}' + '\n' + '{{ auth()->user()->email }}';
 
         $('#table').DataTable( {
+            responsive: true,
             dom:"<'row '<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-3'f>>" +
                 "<'row'<'col-sm-12'tr>>" +
                 "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
@@ -144,7 +145,7 @@
                     },
                     title: headingPrint,
                 }
-                
+
             ]
         } );
     } );

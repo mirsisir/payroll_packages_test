@@ -76,7 +76,7 @@ class Create extends Component
             'acc_name' => '',
             'acc_number' => '',
 
-            'emp_id' => 'unique:employees',
+            'emp_id' => 'required|unique:employees',
             'department_id' => 'required',
             'designation_id' => 'required',
             'join_date' => '',

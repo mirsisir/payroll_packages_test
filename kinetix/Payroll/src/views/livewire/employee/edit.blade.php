@@ -111,19 +111,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="nid" class="">Device ID <span class="text-danger">*</span></label>
-                        <div class="">
-                            <input type="text" wire:model.lazy="device_id"
-                                   class="form-control @error('device_id') is-invalid @enderror" id="nid"
-                                   placeholder="Device ID">
-                            @error('device_id')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
+
 
                     <div class="form-group">
                         <label for="nid" class="">NID <span class="text-danger">*</span></label>

@@ -10,6 +10,8 @@ use kinetix\payroll\Http\Livewire\Department\Crud;
 
 
 use kinetix\payroll\Http\Livewire\Employee\Create;
+use kinetix\payroll\Http\Livewire\Salary\MakePaymentsComponent;
+use kinetix\payroll\Http\Livewire\Salary\SalaryComponent;
 use kinetix\payroll\Models\Application;
 
 
@@ -55,6 +57,11 @@ class HRMServiceProvider extends ServiceProvider
         Livewire::component('Payroll::livewire.attendance-report-details', \kinetix\payroll\Http\Livewire\AttendanceReportDetails::class);
 
         Livewire::component('Payroll::livewire.application.create', \kinetix\payroll\Http\Livewire\Application\Create::class);
+        Livewire::component('Payroll::livewire.loan.create', \kinetix\payroll\Http\Livewire\Loan\Create::class);
+
+
+        Livewire::component('Payroll::livewire.salary.salary-component', SalaryComponent::class);
+        Livewire::component('Payroll::livewire.salary.make-payments-component', MakePaymentsComponent::class);
 
 
 

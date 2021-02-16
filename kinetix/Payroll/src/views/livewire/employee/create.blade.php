@@ -308,14 +308,14 @@
                 </div>
                 <div class="form-group">
                     <label for="department">Department <span class="text-danger">*</span></label>
-                    <select class="form-control @error('department') is-invalid @enderror" id="department"
+                    <select class="form-control @error('department_id') is-invalid @enderror" id="department"
                         wire:model="department_id">
                         <option>Select Department</option>
                         @foreach($departments as $dept)
                             <option value="{{ $dept->id }}">{{ $dept->department }}</option>
                         @endforeach
                     </select>
-                    @error('department')
+                    @error('department_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -324,14 +324,14 @@
 
                 <div class="form-group">
                     <label for="designation">Designation <span class="text-danger">*</span></label>
-                    <select class="form-control @error('designation') is-invalid @enderror" id="designation"
+                    <select class="form-control @error('designation_id') is-invalid @enderror" id="designation"
                         wire:model.lazy="designation_id">
                         <option value="">Select Designation</option>
                         @foreach($designations as $desig)
                             <option value="{{ $desig->id }}">{{ $desig->name }}</option>
                         @endforeach
                     </select>
-                    @error('designation')
+                    @error('designation_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -411,7 +411,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="id_proff" class="">ID Proff</label>
+                        <label for="id_proof" class="">ID Proof</label>
                         <div class="">
                             <input type="file" wire:model.lazy="id_proff"
                                 class="form-control @error('id_proff') is-invalid @enderror" id="id_proff"

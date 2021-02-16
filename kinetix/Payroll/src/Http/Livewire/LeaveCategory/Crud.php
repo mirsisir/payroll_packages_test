@@ -2,6 +2,7 @@
 
 namespace kinetix\payroll\Http\Livewire\LeaveCategory;
 
+use Illuminate\Support\Facades\DB;
 use kinetix\payroll\Models\LeaveCategory;
 use Livewire\Component;
 
@@ -21,7 +22,7 @@ class Crud extends Component
         $data = $this->validate([
             'category_name' => 'required'
         ]);
-        auth()->user()->leave_categories()->create($data);
+        DB::table('leave_categories')->insert($data);
         session()->flash('success', 'Leave Category successfully Inserted.');
         $this->mount();
     }
@@ -58,6 +59,6 @@ class Crud extends Component
         $client_id = auth()->user()->client_id ?? null;
         $leave_categories = LeaveCategory::where('client_id', $client_id)->get();
 
-        return view('Payroll::livewire.leave-category.crud', compact('leave_categories'));
+        return view('Payroll::livewire.leave-category.crud', compact('leave_categories'))->layout('Payroll::layouts.app-hrm');
     }
 }

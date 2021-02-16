@@ -3,8 +3,8 @@
         <li class="nav-item nav-category">Main</li>
         <li class="nav-item active">
             <a class="nav-link"
-                href="/dashboard">
-                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                href="/dashboard/payroll">
+                <span class="icon-bg"><i class="fas fa-tachometer-alt"></i></span>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
@@ -13,16 +13,16 @@
         <li class="nav-item">
             <a class="nav-link"
                 href="/department">
-                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                <span class="icon-bg"><i class="far fa-building"></i></span>
                 <span class="menu-title">Department</span>
             </a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#employees" aria-expanded="false"
                 aria-controls="employees">
-                <span class="icon-bg"><i class="mdi mdi-worker menu-icon"></i></span>
+                <span class="icon-bg"><i class="fas fa-users"></i></span>
                 <span class="menu-title">Employee</span>
-                <i class="menu-arrow"></i>
+
             </a>
             <div class="collapse " id="employees">
                 <ul class="nav flex-column sub-menu">
@@ -39,9 +39,9 @@
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#applications1" aria-expanded="false"
                aria-controls="applications1">
-                <span class="icon-bg"><i class="mdi mdi-application menu-icon"></i></span>
+                <span class="icon-bg"><i class="fas fa-clipboard-check"></i></span>
                 <span class="menu-title">Attendance</span>
-                <i class="menu-arrow"></i>
+
             </a>
             <div class="collapse " id="applications1">
                 <ul class="nav flex-column sub-menu">
@@ -60,9 +60,9 @@
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#applications" aria-expanded="false"
                 aria-controls="applications">
-                <span class="icon-bg"><i class="mdi mdi-application menu-icon"></i></span>
+                <span class="icon-bg"><i class="far fa-newspaper"></i></span>
                 <span class="menu-title">Leave Applications</span>
-                <i class="menu-arrow"></i>
+
             </a>
             <div class="collapse " id="applications">
                 <ul class="nav flex-column sub-menu">
@@ -79,9 +79,9 @@
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#loans" aria-expanded="false"
                 aria-controls="loans">
-                <span class="icon-bg"><i class="mdi mdi-water-percent menu-icon"></i></span>
+                <span class="icon-bg"><i class="fas fa-university"></i></span>
                 <span class="menu-title">Loan</span>
-                <i class="menu-arrow"></i>
+
             </a>
             <div class="collapse " id="loans">
                 <ul class="nav flex-column sub-menu">
@@ -97,9 +97,9 @@
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#salary" aria-expanded="false"
                 aria-controls="salary">
-                <span class="icon-bg"><i class="mdi mdi-wallet-giftcard menu-icon"></i></span>
+                <span class="icon-bg"><i class="fas fa-dollar-sign"></i></span>
                 <span class="menu-title">Salary</span>
-                <i class="menu-arrow"></i>
+
             </a>
             <div class="collapse " id="salary">
                 <ul class="nav flex-column sub-menu">
@@ -119,9 +119,9 @@
         <li class="nav-item ">
             <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false"
                 aria-controls="settings">
-                <span class="icon-bg"><i class="mdi mdi-settings menu-icon"></i></span>
-                <span class="menu-title">Setttings</span>
-                <i class="menu-arrow"></i>
+                <span class="icon-bg"><i class="fas fa-cogs"></i></span>
+                <span class="menu-title">Settings</span>
+
             </a>
             <div class="collapse " id="settings">
                 <ul class="nav flex-column sub-menu">

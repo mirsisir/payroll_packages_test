@@ -35,13 +35,12 @@
                     <label>Search:</label>
                     <input wire:model.debounce.1000ms="search" class="border px-2 py-1 border-primary mb-1">
                 </div> --}}
-                <table id="table" class="table table-bordered table-responsive" >
+                <table id="table" class="table table-bordered " >
                     <thead style="background-color: indigo; color: white;">
                     <tr>
 
                         <th> Name</th>
                         <th> EMP ID</th>
-                        <th> Device ID</th>
 
                         <th> Department</th>
                         <th> Designation</th>
@@ -57,7 +56,6 @@
                                 {{ $employee->fname }} {{ $employee->lname }}
                             </td>
                             <td>{{ $employee->emp_id }}</td>
-                            <td>{{ $employee->device_id }}</td>
 
                             <td>{{ $employee->department->department?? " " }} </td>
                             <td>{{ $employee->designation->name?? " " }} </td>

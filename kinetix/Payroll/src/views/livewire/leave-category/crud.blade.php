@@ -11,9 +11,9 @@
     @endif
 
     @if($updateCategory)
-        @include('livewire.leave-category.edit')
+        @include('Payroll::livewire.leave-category.edit')
     @else
-        @include('livewire.leave-category.create')
+        @include('Payroll::livewire.leave-category.create')
     @endif
 
     <div class=" grid-margin stretch-card">
@@ -55,7 +55,7 @@
                         @endforelse
                         </tbody>
                     </table>
-                    
+
             </div>
         </div>
     </div>

@@ -5,12 +5,13 @@ namespace kinetix\payroll\Http\Livewire\Salary;
 use kinetix\payroll\Models\Employee;
 use kinetix\payroll\Models\SalaryInfo;
 use Illuminate\Support\Facades\View;
+use kinetix\payroll\Models\SalarySheet;
 use Livewire\Component;
 use phpDocumentor\Reflection\Types\This;
 
 class SalaryComponent extends Component
 {
-public  $basic_salary,$employee_type,$house_rent,$special_allowance,$medical,$fuel_allowance,$phone_bill,$other_allowance,$provident_fund,$tax,$other_deduction;
+public  $basic_salary,$employee_type ="Permanent",$house_rent,$special_allowance,$medical,$fuel_allowance,$phone_bill,$other_allowance,$provident_fund,$tax,$other_deduction;
 public $net_salary,$total_deduction,$gross_salary;
 public $all_employee,$e_id,$employee_name;
 public $edit= false;
@@ -24,9 +25,11 @@ public $edit= false;
     public function edit($e_id){
         $this->edit=true;
         $this->e_id= $e_id;
+        $this->employee_name = Employee::find($e_id);
             $info = SalaryInfo::where('employee_id',$e_id)->firstWhere('client_id',auth()->user()->client_id ?? null);
             if (!empty($info)){
-                $this->employee_name = Employee::find($e_id);
+
+
                 $this->basic_salary = $info->basic_salary;
 
                 $this->employee_type = $info->employee_type;
@@ -43,7 +46,7 @@ public $edit= false;
                 $this->tax = $info->tax_deduction;
                 $this->other_deduction = $info->other_deduction;
                 $this->net_salary = $info->net_salary;
-
+                $this->employee_name = Employee::find($e_id);
             }
     }
 
@@ -102,7 +105,7 @@ public $edit= false;
         $salary_infos = SalaryInfo::where('client_id',auth()->user()->client_id ?? null)->get();
         foreach($salary_infos as $salary_info)
         {
-            auth()->user()->salary_sheets()->updateOrCreate(
+            SalarySheet::updateOrCreate(
             ['date' => date('Y-m'), 'employee_id' => $salary_info->employee_id,],
 
             ['employee_type'=>$salary_info->employee_type,

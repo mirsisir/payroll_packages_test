@@ -74,7 +74,7 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-                <span class="mdi mdi-menu"></span>
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="search-field d-none d-xl-block">
