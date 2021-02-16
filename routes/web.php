@@ -20,4 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::view('/', '/dashboard/payroll');
+Route::view('/home', '/dashboard/payroll');
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
