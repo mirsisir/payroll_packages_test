@@ -27,8 +27,8 @@ class PrimaryAttendanceReport extends Component
     {
         $this->month = Carbon::now()->format('Y-m');
         View::share('title', 'Attendance Report Primary');
-        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id ?? null ?? null);
-        $this->all_designation = Designation::all()->where('client_id', auth()->user()->client_id ?? null ?? null);
+        $this->all_department = Department::all()->where('client_id', auth()->user()->client_id ?? null);
+        $this->all_designation = Designation::all()->where('client_id', auth()->user()->client_id ?? null);
     }
     function dayCount($day, $month, $year){
         $totalDay = cal_days_in_month(CAL_GREGORIAN, $month, $year);
@@ -45,7 +45,7 @@ class PrimaryAttendanceReport extends Component
     public function updated()
     {
         $this->all_employee = Employee::all()->where('department_id', $this->department)
-            ->where('client_id', auth()->user()->client_id ?? null ?? null);
+            ->where('client_id', auth()->user()->client_id ?? null);
 
         $month = explode("-", $this->month)[1];
         $year = explode("-", $this->month)[0];
@@ -56,28 +56,32 @@ class PrimaryAttendanceReport extends Component
         //        working day count ----------------------------------
         $holiday_days = [];
         $workingday = 0;
-        $workingday = WorkingDay::firstWhere('client_id', auth()->user()->client_id ?? null ?? null);
-        if ($workingday->sat == 0) {
-            array_push($holiday_days, 'Saturday');
+        $workingday = WorkingDay::firstWhere('client_id', auth()->user()->client_id ?? null);
+
+        if ($workingday!=null){
+            if ($workingday->sat == 0) {
+                array_push($holiday_days, 'Saturday');
+            }
+            if ($workingday->sun == 0) {
+                array_push($holiday_days, 'Sunday');
+            }
+            if ($workingday->mon == 0) {
+                array_push($holiday_days, 'Monday');
+            }
+            if ($workingday->tue == 0) {
+                array_push($holiday_days, 'Tuesday');
+            }
+            if ($workingday->wed == 0) {
+                array_push($holiday_days, 'Wednesday');
+            }
+            if ($workingday->thu == 0) {
+                array_push($holiday_days, 'Thursday');
+            }
+            if ($workingday->fri == 0) {
+                array_push($holiday_days, 'friday');
+            }
         }
-        if ($workingday->sun == 0) {
-            array_push($holiday_days, 'Sunday');
-        }
-        if ($workingday->mon == 0) {
-            array_push($holiday_days, 'Monday');
-        }
-        if ($workingday->tue == 0) {
-            array_push($holiday_days, 'Tuesday');
-        }
-        if ($workingday->wed == 0) {
-            array_push($holiday_days, 'Wednesday');
-        }
-        if ($workingday->thu == 0) {
-            array_push($holiday_days, 'Thursday');
-        }
-        if ($workingday->fri == 0) {
-            array_push($holiday_days, 'friday');
-        }
+
 
 
         $this->total_offday = 0;

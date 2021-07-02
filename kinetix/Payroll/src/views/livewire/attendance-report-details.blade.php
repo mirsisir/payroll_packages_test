@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-3 m-auto">
                     <select name="employee" wire:model="employee" id="department" class="form-control">
-                        <option value="">Select Employee</option>
-                        @foreach($all_employee as $employee)
+                        <option>Select Employee</option>
+                        @foreach($all_employee_show as $employee)
                             <option value="{{$employee->id}}">{{$employee->fname }} {{$employee->lname }}</option>
                         @endforeach
                     </select>
@@ -133,15 +133,16 @@
         </div>
     </div>
 
-    <a href="javascript:void(0);" id="printButton" class = " btn btn-success float-right mr-5">Print</a>
+    <a href="javascript:void(0);" id="printButton" class = " btn btn-info float-right mr-5">Print</a>
+
 
 </div>
-
 
 @section('js')
     <script>
 
-        $(document).ready(function(){
+        // $(document).ready(function(){
+        document.addEventListener('livewire:load', function () {
             $("#printButton").click(function(){
                 // var mode = 'iframe'; //popup
                 // var close = mode == "popup";
@@ -151,7 +152,9 @@
                 var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
                 var htm =
                     '' +
-                    '<link media="all" type="text/css" rel="stylesheet" href="{{ asset('css/materialicons.css') }}">' +
+                    '<link media="all" type="text/css" rel="stylesheet" href="https://kit.fontawesome.com/e303330059.js">' +
+                    '' +
+
                     '<link media="all" type="text/css" rel="stylesheet" href="https://www.bootstrapdash.com/demo/connect-plus/laravel/template/demo_1/css/app.css">';
 
                 WinPrint.document.write(htm+prtContent.innerHTML);
@@ -163,10 +166,10 @@
 
 
         $(document).ready(function () {
-            // alert('lsdf')
-            $('.btn-success').append('<i class="far fa-check-circle"></i>');
-            $('.btn-danger').append('<i class="fas fa-house-user"></i>');
-            $('.btn-secondary').append('<i class="fas fa-house-user"></i>');
+        // document.addEventListener('livewire:load', function () {
+            $('.btn-success').append('P');
+            $('.btn-danger').append('H');
+            $('.btn-secondary').append('H');
         })
     </script>
 @endsection

@@ -11,14 +11,15 @@ use Livewire\Component;
 
 class AttendanceReportDetails extends Component
 {
-    public $employee,$month;
+    public $employee,$month ,$all_employee_show;
     public $all_employee=[] ,$attendance,$working_days=[];
 
     public function mount(){
         view::share( 'title', 'Attendance Report Details');
         $this->month = Carbon::now()->format('Y-m');
 
-        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id ??null);
+        $this->all_employee = Employee::all()->where('client_id',auth()->user()->client_id ?? null);
+        $this->all_employee_show = Employee::all()->where('client_id',auth()->user()->client_id ?? null);
 
         $this->attendance= Attendance::where('client_id',auth()->user()->client_id ?? null ??null)->get();
 
@@ -51,6 +52,8 @@ class AttendanceReportDetails extends Component
 
 
     public function updated(){
+        $this->dispatchBrowserEvent('onItemChanged');
+
         if($this->employee){
             $this->all_employee = [];
             $this->all_employee[] = Employee::find($this->employee);
@@ -61,6 +64,7 @@ class AttendanceReportDetails extends Component
 
     public function render()
     {
+
         return view('Payroll::livewire.attendance-report-details')->layout('Payroll::layouts.app-hrm');
     }
 }

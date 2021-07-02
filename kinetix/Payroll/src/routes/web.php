@@ -16,25 +16,6 @@ use kinetix\payroll\Http\Livewire\Employee\Edit;
 use kinetix\payroll\Http\Controller\TestController;
 use kinetix\payroll\Http\Livewire\LiveTestComponent;
 
-//Route::get('content',function(){
-//   return view('live::test');
-//});
-//
-
-//Route::get('department1',function(){
-//   return view('Payroll::index');
-//});
-
-
-//
-//Route::get('/hello',[ TestController::class,'index'])->name('hello');
-////
-//Route::middleware(['web'])
-//    ->group(function () {
-//
-//        Route::get('/live', LiveTestComponent::class)->name('sisir.test');
-//
-//        Route::get('/department', Crud::class)->name('Payroll.live');
 
 
 Route::middleware(['web'])
@@ -56,16 +37,13 @@ Route::middleware(['web'])
 
         Route::middleware(['auth'])->group(function () {
 
-//            Route::get('/department', function () {
-//                return view('Payroll::livewire.department.index');
-//            });
        Route::get('/department', Crud::class)->name('department_create');
 
             Route::get('/set-working-days-livewire', function () {
                 return view('Payroll::livewire.working-day.index');
             });
 
-            Route::view('/', 'Payroll::dashboard');
+            Route::view('/dashboard/payroll', 'Payroll::dashboard');
             Route::view('/dashboard/payroll', 'Payroll::dashboard');
 
             Route::get('/set-working-days', [WorkingDaysController::class, 'index']);

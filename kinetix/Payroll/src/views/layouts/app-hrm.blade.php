@@ -343,6 +343,15 @@
 {{--        var Turbolinks = require("turbolinks")--}}
 {{--        Turbolinks.start()--}}
 {{--    </script>--}}
+<script>
+    window.addEventListener('onItemChanged', message => {
+        $('.btn-success').text('P');
+        $('.btn-danger').text('H');
+        $('.btn-secondary').text('H');
+        console.log('called')
+    })
+</script>
+
 @yield('js')
 
 </body>

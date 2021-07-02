@@ -3,7 +3,7 @@
         <li class="nav-item nav-category">Main</li>
         <li class="nav-item active">
             <a class="nav-link"
-                href="/dashboard/payroll">
+                href="/dashboard">
                 <span class="icon-bg"><i class="fas fa-tachometer-alt"></i></span>
                 <span class="menu-title">Dashboard</span>
             </a>
